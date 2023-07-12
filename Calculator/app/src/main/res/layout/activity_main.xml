@@ -27,14 +27,14 @@
                             android:id="@+id/textView2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:hint="0"
                             android:textAlignment="viewEnd"
                             android:textColor="@color/white"
                             android:textSize="25sp"
 
                             />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/edittext"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                             android:layout_height="60dp"
                             android:background="@drawable/btn_bg"
                             android:gravity="center"
-                            android:text="^"
+                            android:text="("
                             android:textColor="@color/green"
                             android:textSize="25sp"
                             app:backgroundTint="@color/btn_bg_black"
@@ -98,7 +98,7 @@
                             android:layout_width="60dp"
                             android:layout_height="60dp"
                             android:background="@drawable/btn_bg"
-                            android:text="%"
+                            android:text=")"
                             android:textColor="@color/green"
                             android:textSize="25sp"
                             app:backgroundTint="@color/btn_bg_black"
@@ -276,7 +276,7 @@
                             android:layout_height="60dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/btn_bg"
-                            android:text="3"
+                            android:text="1"
                             android:textColor="@color/white"
                             android:textSize="20sp"
                             app:backgroundTint="@color/btn_bg_black"
@@ -311,7 +311,7 @@
                             android:layout_height="60dp"
                             android:layout_marginTop="20dp"
                             android:background="@drawable/btn_bg"
-                            android:text="1"
+                            android:text="3"
                             android:textColor="@color/white"
                             android:textSize="20sp"
                             app:backgroundTint="@color/btn_bg_black"
