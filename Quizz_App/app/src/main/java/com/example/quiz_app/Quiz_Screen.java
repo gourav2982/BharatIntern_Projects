@@ -43,8 +43,10 @@ public class Quiz_Screen extends AppCompatActivity {
     ArrayList<Integer> questionId ;
     Context context =this;
     String title1 ;
+    TextView textView;
     int count=0;
     int score=0;
+    String correct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,7 @@ public class Quiz_Screen extends AppCompatActivity {
         ques = findViewById(R.id.textView3);
         title = findViewById(R.id.textView);
         nextBtn = findViewById(R.id.nextBtn);
+        textView=findViewById(R.id.textView2);
 
         questionId= getIntent().getExtras().getIntegerArrayList("questionId");
         title1=getIntent().getExtras().getString("title");
@@ -70,6 +73,19 @@ public class Quiz_Screen extends AppCompatActivity {
             public void onClick(View v) {
                 if(count<questionId.size()&&selectedRadio!=null){
                     nextQuestion();
+                    if((selectedRadio.getText() + "").equals(correct)){
+                        score++;
+                    }
+
+                }
+                else if(count>=questionId.size()){
+                    if((selectedRadio.getText() + "").equals(correct)){
+                        score++;
+                    }
+                    Intent i=new Intent(context, Score_screen.class);
+                    i.putExtra("score",score);
+                    i.putExtra("numOfQuestion",questionId.size());
+                    context.startActivity(i);
                 }
             }
         });
@@ -90,6 +106,8 @@ public class Quiz_Screen extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                     selectedRadio.setOutlineSpotShadowColor(Color.parseColor("#FF3700B3"));
                 }
+
+
             }
         });
     }
@@ -102,25 +120,20 @@ public class Quiz_Screen extends AppCompatActivity {
 
                 if(response.body()!=null){
                     Quiz_model model = response.body();
+                    textView.setText("Question "+(count+1)+"/"+questionId.size());
                     radio1.setText(model.getOptions1());
                     radio2.setText(model.getOptions2());
                     radio3.setText(model.getOptions3());
                     radio4.setText(model.getOptions4());
                     ques.setText(model.getQuestion());
+                    correct = model.getCorrect_option()+"";
                     title.setText(title1);
-                    if(selectedRadio!=null&&selectedRadio.getText()== model.getCorrect_option()){
-                        score++;
-                    }
 
                     count++;
-                    if(count>=questionId.size()){
-                        Intent i=new Intent(context, Score_screen.class);
-                        i.putExtra("score",score);
-                        i.putExtra("numOfQuestion",questionId.size());
-                        context.startActivity(i);
 
-                    }
+
                 }
+
 
             }
 
