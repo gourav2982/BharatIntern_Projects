@@ -1,4 +1,4 @@
-package com.example.quiz_app.model;
+package com.example.quiz_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
