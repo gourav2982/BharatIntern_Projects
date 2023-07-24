@@ -19,7 +19,11 @@ public class Quiz_model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    public   int titleId;
     private String question;
-    private  ArrayList<String> options;
+    private  String options1;
+    private  String options2;
+    private  String options3;
+    private  String options4;
     private String correct_option;
 }

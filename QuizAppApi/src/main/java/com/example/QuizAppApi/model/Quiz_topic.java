@@ -22,5 +22,6 @@ public class Quiz_topic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-    private int questionModelId;
+    private int numOfQues;
+    private ArrayList<Integer> questionModelId;
 }
