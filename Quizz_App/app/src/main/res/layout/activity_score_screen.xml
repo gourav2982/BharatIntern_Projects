@@ -8,6 +8,7 @@
     tools:context=".Score_screen">
 
     <TextView
+        android:id="@+id/conngo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
@@ -57,5 +58,21 @@
             android:textColor="@color/purple"
             android:textSize="30sp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/bTh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="Back To Home"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:padding="15dp"
+        android:background="@drawable/back_to_home_btn"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

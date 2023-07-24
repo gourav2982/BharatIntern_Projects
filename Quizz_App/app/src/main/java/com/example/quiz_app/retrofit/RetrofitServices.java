@@ -12,7 +12,7 @@ public class RetrofitServices {
     }
     private void initializeRetrofit(){
         retrofit = new Retrofit.Builder().
-                baseUrl("http://192.168.95.250:8080")
+                baseUrl("https://api-production-a1aa.up.railway.app/")
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .build();
     }

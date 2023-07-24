@@ -58,6 +58,7 @@ public class Selection_Adapter extends RecyclerView.Adapter<Selection_Adapter.Vi
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, Quiz_Screen.class);
+
                 i.putExtra("questionId",questionId);
                 i.putExtra("title",title);
                 context.startActivity(i);
@@ -83,4 +84,5 @@ public class Selection_Adapter extends RecyclerView.Adapter<Selection_Adapter.Vi
             this.button = itemView.findViewById(R.id.start_btn);
         }
     }
+
 }

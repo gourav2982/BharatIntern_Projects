@@ -36,6 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageButton
+                    android:id="@+id/backBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -70,14 +71,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:contentDescription="Question mark"
-                    android:layout_marginHorizontal="3dp"
-                    android:background="@drawable/baseline_question_mark_24"
-                    android:scaleType="center" />
+
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

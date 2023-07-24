@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -44,6 +45,7 @@ public class Quiz_Screen extends AppCompatActivity {
     Context context =this;
     String title1 ;
     TextView textView;
+    ImageButton back;
     int count=0;
     int score=0;
     String correct;
@@ -63,6 +65,18 @@ public class Quiz_Screen extends AppCompatActivity {
         title = findViewById(R.id.textView);
         nextBtn = findViewById(R.id.nextBtn);
         textView=findViewById(R.id.textView2);
+        back= findViewById(R.id.backBtn);
+
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(), Home_Screen.class);
+                finishAffinity();
+                startActivity(i);
+                finish();
+            }
+        });
 
         questionId= getIntent().getExtras().getIntegerArrayList("questionId");
         title1=getIntent().getExtras().getString("title");
@@ -86,6 +100,8 @@ public class Quiz_Screen extends AppCompatActivity {
                     i.putExtra("score",score);
                     i.putExtra("numOfQuestion",questionId.size());
                     context.startActivity(i);
+                    finish();
+
                 }
             }
         });

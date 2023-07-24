@@ -62,9 +62,9 @@ public class Home_Screen extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<ArrayList<Quiz_topic>> call, Throwable t) {
-                        Log.i("qwerty",t+"");
-                        Toast.makeText(Home_Screen.this, ""+t, Toast.LENGTH_LONG).show();
+
                     }
+
                 });
 
     }
