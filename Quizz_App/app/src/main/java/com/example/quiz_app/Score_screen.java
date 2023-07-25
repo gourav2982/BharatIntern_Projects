@@ -42,7 +42,7 @@ public class Score_screen extends AppCompatActivity {
         bth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), Home_Screen.class);
+                Intent i= new Intent(getApplicationContext(), Home_Screen.class);
                 finishAffinity();
                 startActivity(i);
                 finish();

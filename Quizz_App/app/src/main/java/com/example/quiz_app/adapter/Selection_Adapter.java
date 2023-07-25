@@ -17,6 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.quiz_app.ApiModel.Quiz_model;
+import com.example.quiz_app.ApiModel.Quiz_topic;
 import com.example.quiz_app.Home_Screen;
 import com.example.quiz_app.Quiz_Screen;
 import com.example.quiz_app.R;
@@ -27,13 +29,12 @@ import java.util.ArrayList;
 
 public class Selection_Adapter extends RecyclerView.Adapter<Selection_Adapter.ViewHolder> {
 
-    ArrayList<Quiz_start> qs = new ArrayList<>();
+    ArrayList<Quiz_topic> qs = new ArrayList<>();
     ArrayList<Integer> questionId;
     Context context;
 
-    public Selection_Adapter(ArrayList<Quiz_start> qs,ArrayList<Integer> questionId,Context context) {
+    public Selection_Adapter(ArrayList<Quiz_topic> qs,Context context) {
         this.qs = qs;
-        this.questionId=questionId;
         this.context = context;
     }
 
@@ -47,16 +48,20 @@ public class Selection_Adapter extends RecyclerView.Adapter<Selection_Adapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textView2.setText(qs.get(position).getHeading());
+    public void onBindViewHolder(@NonNull ViewHolder holder, int pos) {
+        int position = pos;
+        holder.textView2.setText(qs.get(position).getTitle());
         holder.textView2.setTextColor(Color.parseColor("#8b80b6"));
         holder.textView.setTextColor(Color.parseColor("#fbb44d"));
-        String s ="Question "+ qs.get(position).getNum_of_ques();
+        String s ="Question "+ qs.get(position).getNumOfQues();
         holder.textView.setText(s);
-        String title =qs.get(position).getHeading();
+        String title =qs.get(position).getTitle();
+
+
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                questionId = qs.get(position).getQuestionModelId();
                 Intent i = new Intent(context, Quiz_Screen.class);
 
                 i.putExtra("questionId",questionId);

@@ -44,17 +44,7 @@ public class Home_Screen extends AppCompatActivity {
                     @Override
                     public void onResponse(@NonNull Call<ArrayList<Quiz_topic>> call, @NonNull Response<ArrayList<Quiz_topic>> response) {
                         ArrayList<Quiz_topic> qt = response.body();
-
-
-                        for(int i = 0; i< Objects.requireNonNull(response.body()).size(); i++){
-                            assert qt != null;
-                            Quiz_start topic = new Quiz_start(qt.get(i).getTitle(),qt.get(i).getNumOfQues());
-                            questionId = qt.get(i).getQuestionModelId();
-                            qs.add(topic);
-                        }
-
-
-                        Selection_Adapter sa = new Selection_Adapter(qs,questionId,context);
+                        Selection_Adapter sa = new Selection_Adapter(qt,context);
                         recyclerView = findViewById(R.id.Quiz_selection_recycler_view);
                         recyclerView.setLayoutManager(new LinearLayoutManager(context));
                         recyclerView.setAdapter(sa);

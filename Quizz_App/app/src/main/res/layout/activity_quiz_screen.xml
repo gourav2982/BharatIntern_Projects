@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.02"
-                android:text="English for beginner"
+                tools:text="English for beginner"
                 android:textColor="#5c6374"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -88,7 +88,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            android:text="Question 6/15" />
+            tools:text="Question 6/15" />
 
         <TextView
             android:id="@+id/textView3"
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="92dp"
             android:letterSpacing="0.022"
-            android:text="Motor racing is the __ sports in the world."
+            tools:text="Motor racing is the __ sports in the world."
             android:textColor="#5c6374"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -131,7 +131,7 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:padding="25dp"
-                    android:text="Most Expensive"
+                    tools:text="Most Expensive"
                     android:textColor="#5c6374"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -147,7 +147,7 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:padding="25dp"
-                    android:text="Most Expensive"
+                    tools:text="Most Expensive"
                     android:textColor="#5c6374"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -162,7 +162,7 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:padding="25dp"
-                    android:text="Most Expensive"
+                    tools:text="Most Expensive"
                     android:textColor="#5c6374"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -177,7 +177,7 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:padding="25dp"
-                    android:text="Most Expensive"
+                    tools:text="Most Expensive"
                     android:textColor="#5c6374"
                     android:textSize="20sp"
                     android:textStyle="bold" />
